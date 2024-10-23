@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "351592381319",
+    "firebase_url": "https://realtime-database-crud-4b68b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "realtime-database-crud-4b68b",
+    "storage_bucket": "realtime-database-crud-4b68b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351592381319:android:c20b3b5dbd9a7b9949f122",
+        "android_client_info": {
+          "package_name": "com.example.firebase_re"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVOB3tSVlrUu8WcVi567RRlUv_9qfkkp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
