@@ -35,36 +35,41 @@ class _RealtimedatabaseState extends State<Realtimedatabase> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.all(8),
-            child: Text(countvalue.toString()+ " database - "+databaseJson),
-            ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 50,),
+              Padding(padding: EdgeInsets.all(12),
+              child: Text(countvalue.toString()+ " database - "+databaseJson),
+              ),
+SizedBox(height: 30,),
+              TextButton(onPressed: (){
+              _createDB();
+              }, child: Text('Create DB')),
+              TextButton(onPressed: (){
 
-            TextButton(onPressed: (){
+              }, child: Text('Read value')),
+              TextButton(onPressed: (){
 
-            }, child: Text('Create DB')),
-            TextButton(onPressed: (){
+              }, child: Text('Read Once Child')),
+              TextButton(onPressed: (){
 
-            }, child: Text('Read value')),
-            TextButton(onPressed: (){
+              }, child: Text('Update Value')),
+              TextButton(onPressed: (){
 
-            }, child: Text('Read Once Child')),
-            TextButton(onPressed: (){
+              }, child: Text('Update Counter value by 1')),
+              TextButton(onPressed: (){
 
-            }, child: Text('Update Value')),
-            TextButton(onPressed: (){
-
-            }, child: Text('Update Counter value by 1')),
-            TextButton(onPressed: (){
-
-            }, child: Text('Delete Value'))
-          ],
+              }, child: Text('Delete Value'))
+            ],
+          ),
         ),
       )),
 
     );
   }
+  // create database function
   _createDB(){
     // 2 ta row(document) create hobe profile and jobprofile
     _dbref.child('profile').set("Jakaria Profile");
