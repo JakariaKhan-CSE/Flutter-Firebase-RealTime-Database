@@ -48,7 +48,7 @@ SizedBox(height: 30,),
               _createDB();
               }, child: Text('Create DB')),
               TextButton(onPressed: (){
-
+                _realdb_once();
               }, child: Text('Read value')),
               TextButton(onPressed: (){
 
@@ -76,6 +76,15 @@ SizedBox(height: 30,),
     _dbref.child('jobprofile').set({  // add data in json format(map<String, dynamic>)
       "website1": "www.jakaria.com",
       "website2": "www.khan.com"
+    });
+  }
+
+  _realdb_once(){
+    _dbref.child('jobprofile').child('website2').once().then((snapshotData){
+      print('read once - '+ snapshotData.snapshot.value.toString());
+      setState(() {
+        databaseJson = snapshotData.snapshot.value.toString();
+      });
     });
   }
 }
