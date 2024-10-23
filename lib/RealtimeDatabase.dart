@@ -51,13 +51,13 @@ SizedBox(height: 30,),
                 _realdb_once();
               }, child: Text('Read value')),
               TextButton(onPressed: (){
-
+              _readdb_onechild();
               }, child: Text('Read Once Child')),
               TextButton(onPressed: (){
-
+            _updateValue();
               }, child: Text('Update Value')),
               TextButton(onPressed: (){
-
+_updatevalue_count();
               }, child: Text('Update Counter value by 1')),
               TextButton(onPressed: (){
 
@@ -85,6 +85,27 @@ SizedBox(height: 30,),
       setState(() {
         databaseJson = snapshotData.snapshot.value.toString();
       });
+    });
+  }
+
+  _readdb_onechild(){
+    _dbref.child("jobprofile").child("website2").once().then((dataSnapshot){
+      print(" read once - "+ dataSnapshot.snapshot.value.toString() );
+      setState(() {
+        databaseJson = dataSnapshot.snapshot.value.toString();
+      });
+    });
+  }
+
+  _updateValue(){
+    _dbref.child('jobprofile').update({
+      "website2": "www.updatewebsite.com"
+    });
+  }
+
+  _updatevalue_count(){
+    _dbref.child('myCountKey').update({
+      "key_counter": countvalue+1
     });
   }
 }
