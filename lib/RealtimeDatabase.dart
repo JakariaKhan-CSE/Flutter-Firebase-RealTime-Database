@@ -23,6 +23,7 @@ class _RealtimedatabaseState extends State<Realtimedatabase> {
   void connectRealTimeDatabase(){
   _dbref = FirebaseDatabase.instance.ref();  // at first get instance
 
+  // very useful see carefully. All time realtime data show korbe
     _dbref.child('myCountKey').child('key_counter').onValue.listen((event){
       print('Counter update: '+ event.snapshot.value.toString());
       setState(() {
@@ -60,7 +61,7 @@ SizedBox(height: 30,),
 _updatevalue_count();
               }, child: Text('Update Counter value by 1')),
               TextButton(onPressed: (){
-
+              _delete();
               }, child: Text('Delete Value'))
             ],
           ),
@@ -102,10 +103,14 @@ _updatevalue_count();
       "website2": "www.updatewebsite.com"
     });
   }
-
+// this is useful
   _updatevalue_count(){
     _dbref.child('myCountKey').update({
       "key_counter": countvalue+1
     });
+  }
+// profile(document) delete
+  _delete(){
+    _dbref.child('profile').remove();
   }
 }
